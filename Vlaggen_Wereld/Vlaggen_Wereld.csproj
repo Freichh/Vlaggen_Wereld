@@ -1,0 +1,854 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5849E74-F622-4C67-9A7F-EBB25F671E0A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Vlaggen_Wereld</RootNamespace>
+    <AssemblyName>Vlaggen_Wereld</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Json\country_data_json.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ae.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\af.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\al.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\am.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\aq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\at.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\au.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\aw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\az.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\be.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\br.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\by.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\co.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\de.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\do.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\eg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\eh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\er.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\es.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\et.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\fi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\fj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\fk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\fm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\fo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\fr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ht.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\il.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\im.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\io.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\iq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\is.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\it.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\je.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\jm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\jo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\jp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\kg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\kh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\km.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\kn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\kp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\kr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\kw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\kz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\la.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\li.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\me.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\my.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\na.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\no.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\np.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\om.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\py.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\qa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\re.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\rs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\rw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\se.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\si.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\so.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\st.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\td.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\th.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\to.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\um.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\us.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\uy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\uz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\va.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\vc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\vg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\vi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\vn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\vu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\wf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ws.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\yt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\za.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\zm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\zw.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
