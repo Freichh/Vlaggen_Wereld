@@ -2,12 +2,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Resources;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows;
 using System.Windows.Data;
@@ -30,32 +32,13 @@ namespace Vlaggen_Wereld
         {
             InitializeComponent();
 
-            List<ImageSource> vlaggen = new List<ImageSource>();
+            //List<ImageSource> vlaggen = new List<ImageSource>();
             
-            List<Country> countries = new List<Country>();
+            //List<Country> countries = new List<Country>();
 
-            LoadJson();
+            //LoadJson();
 
-
-
-            /// Haal alle images op als stream met pack URI's, zet om naar bitmaps en voeg toe aan List Vlaggen.
-            string[] files = GetResourcesUnder("Resources");
-            Array.Sort(files);
-            foreach (var file in files)
-            {
-                string uriPath = "pack://application:,,,/Resources/" + file;
-                //Console.WriteLine(file);
-                Uri uri = new Uri(uriPath, UriKind.RelativeOrAbsolute);
-                StreamResourceInfo info = Application.GetResourceStream(uri);
-
-                var bitmapImage = new BitmapImage();
-                bitmapImage.BeginInit();
-                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-                bitmapImage.StreamSource = info.Stream;
-                bitmapImage.EndInit();
-                bitmapImage.Freeze();
-                vlaggen.Add(bitmapImage);
-            }
+            //LoadFlags();
 
             /// Bind vlaggen List aan ItemsControl in XAML
             //flagsOverview.ItemsSource = Vlaggen;
@@ -84,6 +67,28 @@ namespace Vlaggen_Wereld
         }
 
 
+        /// Haal alle images op als stream met pack URI's, zet om naar bitmaps en voeg toe aan List Vlaggen.
+        public void LoadFlags()
+        {
+            string[] files = GetResourcesUnder("Resources");
+            Array.Sort(files);
+            foreach (var file in files)
+            {
+                string uriPath = "pack://application:,,,/Resources/" + file;
+                //Console.WriteLine(file);
+                Uri uri = new Uri(uriPath, UriKind.RelativeOrAbsolute);
+                StreamResourceInfo info = Application.GetResourceStream(uri);
+
+                var bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.StreamSource = info.Stream;
+                bitmapImage.EndInit();
+                bitmapImage.Freeze();
+                List<ImageSource> vlaggen = new List<ImageSource>();
+                vlaggen.Add(bitmapImage);
+            }
+        }
 
 
         // Laad alle landen namen uit json resource bestand
@@ -95,12 +100,21 @@ namespace Vlaggen_Wereld
             {
                 string json = r.ReadToEnd();
                 List<Country> countries = JsonConvert.DeserializeObject<List<Country>>(json);
-                foreach (Country country in countries)
-                {
-                    Console.WriteLine(country.Name);
-                }
-
             }
+        }
+        
+
+
+        public class Countries
+        {
+            public ObservableCollection<Country> CountryList { get; set; }
+
+            public Countries()
+            {
+                CountryList = new ObservableCollection<Country>();
+                
+            }
+
         }
 
         public class Country
